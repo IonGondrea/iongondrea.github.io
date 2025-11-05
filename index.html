@@ -3,251 +3,285 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gondrea Eugen — Portofoliu</title>
-  <meta name="description" content="Portofoliul lui Gondrea Eugen: proiecte Java, certificări, contact și linkuri către GitHub & LinkedIn." />
-  <meta name="author" content="Gondrea Eugen" />
-  <meta property="og:title" content="Gondrea Eugen — Portofoliu" />
-  <meta property="og:description" content="Proiecte Java, certificări, contact și linkuri către GitHub & LinkedIn." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/og-image.jpg" />
-  <meta name="color-scheme" content="light dark" />
-  <link rel="icon" href="/assets/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Ion Gondrea — Portofoliu</title>
+  <meta name="description" content="Portofoliul lui Ion Gondrea: proiecte, reușite, despre mine și contact." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #0b0c10;          /* dark */
-      --panel: #11131a;
-      --card: #151826;
-      --text: #e6e6e6;
-      --muted: #b7b7c2;
-      --brand: #6aa9ff;      /* primary */
-      --brand-2:#7df0c4;     /* accent */
-      --ring: rgba(122,169,255,.35);
-      --shadow: 0 10px 25px rgba(0,0,0,.35);
+      --bg: #0b0f14;        /* very dark blue/gray */
+      --panel: #121821;     /* card background */
+      --muted: #9fb0c0;     /* secondary text */
+      --text: #e6edf3;      /* primary text */
+      --brand: #4aa3ff;     /* accent */
+      --brand-2:#8b5cf6;    /* secondary accent */
+      --ring: rgba(74,163,255,.45);
+      --radius: 16px;
+      --shadow: 0 8px 30px rgba(0,0,0,.35);
     }
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg: #f6f7fb;
-        --panel: #ffffff;
-        --card: #ffffff;
-        --text: #0d0d0f;
-        --muted: #515768;
-        --brand: #2e6cff;
-        --brand-2:#06b6d4;
-        --ring: rgba(46,108,255,.22);
-        --shadow: 0 10px 25px rgba(15,23,42,.09);
-      }
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 80% -10%, rgba(122,169,255,.18), transparent 60%),
-                  radial-gradient(1000px 500px at -10% 10%, rgba(125,240,196,.12), transparent 40%),
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(138,92,246,.12), transparent),
+                  radial-gradient(1000px 600px at 110% 10%, rgba(74,163,255,.10), transparent),
                   var(--bg);
       color: var(--text);
+      line-height: 1.6;
     }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    a{ color: var(--brand); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    .container{ width: min(1100px, 92vw); margin: 0 auto; }
+
     /* Header */
-    header { position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(180%) blur(10px);
-      background: color-mix(in lch, var(--bg) 75%, transparent); border-bottom: 1px solid color-mix(in lch, var(--text) 10%, transparent);
+    header{
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px);
+      background: rgba(11,15,20,.6); border-bottom: 1px solid rgba(255,255,255,.06);
     }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .3px; }
-    .brand .logo { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: var(--shadow); }
-    nav a { color: var(--text); text-decoration: none; margin-left: 18px; font-weight: 500; opacity: .9; }
-    nav a:hover { opacity: 1; }
+    .nav{ display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .logo{ display:flex; gap:10px; align-items:center; font-weight:700; letter-spacing:.2px; }
+    .logo .dot{ width:10px; height:10px; border-radius:50%; background: linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow: 0 0 0 6px rgba(74,163,255,.12); }
+    .nav a{ margin-left: 18px; font-weight: 600; color: var(--muted); }
+    .nav a:hover{ color: var(--text); }
+    .btn{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border-radius: 999px; background: linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; font-weight:700; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.08); }
+    .btn:hover{ filter: brightness(1.05); text-decoration:none; }
+
     /* Hero */
-    .hero { padding: 72px 0 32px; text-align: left; }
-    .kicker { display: inline-flex; gap: 8px; align-items: center; padding: 6px 10px; border: 1px solid color-mix(in lch, var(--text) 15%, transparent); border-radius: 999px; font-size: 12px; opacity: .85; }
-    .kicker .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--brand); box-shadow: 0 0 0 4px var(--ring); }
-    h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; margin: 18px 0 14px; letter-spacing: -.3px; }
-    .lead { font-size: clamp(16px, 2.2vw, 18px); color: var(--muted); max-width: 780px; }
-    .cta { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 12px; border: 1px solid color-mix(in lch, var(--text) 15%, transparent); background: linear-gradient(180deg, color-mix(in lch, var(--panel) 70%, transparent), color-mix(in lch, var(--panel) 92%, transparent)); color: var(--text); text-decoration: none; font-weight: 600; box-shadow: var(--shadow); }
-    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); border: none; color: #0b0c10; }
-    .btn:hover { transform: translateY(-1px); }
+    .hero{ padding: 80px 0 40px; }
+    .hero-inner{ display:grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: center; }
+    .badge{ display:inline-block; padding:6px 10px; border-radius: 999px; font-size:.85rem; color:#cfe3ff; background: rgba(74,163,255,.16); border:1px solid rgba(74,163,255,.25); }
+    .title{ font-size: clamp(34px, 4vw, 54px); line-height: 1.1; margin: 14px 0 10px; }
+    .subtitle{ color: var(--muted); font-size: 1.1rem; max-width: 60ch; }
+    .hero-cta{ margin-top: 22px; display:flex; gap:12px; flex-wrap: wrap; }
+    .card{ background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius); box-shadow: var(--shadow);
+           padding: 18px; }
+    .pfp{ aspect-ratio: 1/1; width: 100%; border-radius: var(--radius); object-fit: cover; border:1px solid rgba(255,255,255,.08); }
+
     /* Sections */
-    section { padding: 48px 0; }
-    .section-title { font-size: 22px; margin-bottom: 18px; }
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
-    .card { grid-column: span 12; border: 1px solid color-mix(in lch, var(--text) 12%, transparent); background: linear-gradient(180deg, color-mix(in lch, var(--card) 85%, transparent), color-mix(in lch, var(--card) 98%, transparent)); border-radius: 16px; padding: 18px; box-shadow: var(--shadow); }
-    @media (min-width: 720px){ .card.span-6 { grid-column: span 6; } .card.span-4{ grid-column: span 4; } }
-    .muted { color: var(--muted); font-size: 14px; }
-    .tag { display: inline-block; padding: 4px 10px; border-radius: 999px; background: color-mix(in lch, var(--brand) 15%, transparent); color: color-mix(in lch, var(--brand) 85%, white); font-size: 12px; margin-right: 6px; }
-    .card h3 { margin: 6px 0 8px; font-size: 18px; }
-    .card p { margin: 0 0 8px; color: var(--muted); }
-    .card .actions { display:flex; gap: 10px; margin-top: 10px; }
-    .projects .thumb { width: 100%; aspect-ratio: 16/9; border-radius: 12px; background: linear-gradient(135deg, color-mix(in lch, var(--brand) 25%, transparent), color-mix(in lch, var(--brand-2) 25%, transparent)); opacity:.9; }
-    /* Footer */
-    footer { padding: 36px 0 56px; color: var(--muted); text-align: center; }
-    .links { display:flex; gap: 14px; justify-content:center; margin-top: 10px; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-    /* Utilities */
-    .row { display:flex; gap:18px; flex-wrap: wrap; }
-    .col { flex:1 1 240px; }
-    .nowrap { white-space: nowrap; }
-    .sep { height:1px; background: color-mix(in lch, var(--text) 12%, transparent); margin: 8px 0 14px; }
+    section{ padding: 56px 0; }
+    h2{ font-size: clamp(26px, 2.6vw, 34px); margin: 0 0 18px; }
+    .grid{ display:grid; gap: 16px; }
+    .grid-3{ grid-template-columns: repeat(3, 1fr); }
+    .grid-2{ grid-template-columns: repeat(2, 1fr); }
+
+    /* About */
+    .kpis{ display:flex; gap:14px; flex-wrap: wrap; margin-top: 12px; }
+    .kpi{ padding:10px 12px; background: #0e141c; border:1px solid rgba(255,255,255,.06); border-radius: 10px; color:#c8d6e5; }
+
+    /* Projects */
+    .project{ display:flex; flex-direction: column; gap: 10px; }
+    .project .thumb{ width:100%; aspect-ratio: 16/9; border-radius: 12px; object-fit: cover; border:1px solid rgba(255,255,255,.08); }
+    .tags{ display:flex; gap:8px; flex-wrap: wrap; }
+    .tag{ font-size:.85rem; padding:6px 10px; border-radius: 999px; background:#0f1620; border:1px solid rgba(255,255,255,.08); color:#cfe3ff; }
+
+    /* Achievements */
+    .timeline{ border-left: 2px solid rgba(255,255,255,.12); padding-left:14px; margin-left:6px; }
+    .t-item{ position:relative; margin: 16px 0; }
+    .t-item::before{ content:""; position:absolute; left:-22px; top:8px; width:12px; height:12px; border-radius:50%; background: linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow: 0 0 0 5px rgba(74,163,255,.12); }
+
+    /* Gallery */
+    .gallery{ display:grid; grid-template-columns: repeat(6, 1fr); gap:10px; }
+    .gallery img{ width:100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; border:1px solid rgba(255,255,255,.08); }
+
+    /* Contact */
+    form{ display:grid; gap:12px; background: #0e141c; border:1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 16px; }
+    input, textarea{ width:100%; padding:12px 14px; border-radius: 10px; border:1px solid rgba(255,255,255,.1); background:#0b1118; color:var(--text); outline: none; }
+    input:focus, textarea:focus{ border-color: var(--brand); box-shadow: 0 0 0 4px var(--ring); }
+
+    footer{ padding: 40px 0 60px; color: var(--muted); text-align:center; }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .gallery{ grid-template-columns: repeat(3, 1fr); }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-      <div class="brand"><div class="logo" aria-hidden="true"></div> <span>Gondrea Eugen</span></div>
-      <nav aria-label="Meniu principal">
+      <div class="logo"><span class="dot"></span> Ion Gondrea</div>
+      <nav>
         <a href="#despre">Despre</a>
         <a href="#proiecte">Proiecte</a>
-        <a href="#certificari">Certificări</a>
+        <a href="#reu">Reușite</a>
+        <a href="#galerie">Galerie</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero container">
-      <span class="kicker"><span class="dot"></span> Junior Java Developer</span>
-      <h1>Bună, sunt <span class="nowrap">Gondrea Eugen</span> — construiesc aplicații Java clare, testabile și utile.</h1>
-      <p class="lead">Îmi place să transform ideile în proiecte reale. Lucrez cu Java, OOP, colecții, excepții, SQL, Git/GitHub și experimentez cu Spring Boot, Docker și puțin frontend. Caut o oportunitate <strong>Junior</strong> unde să cresc prin practică.</p>
-      <div class="cta">
-        <a class="btn primary" href="#proiecte">Vezi proiectele</a>
-        <a class="btn" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="/cv/Gondrea_Eugen_CV.pdf" download>Descarcă CV</a>
-      </div>
-    </section>
-
-    <!-- Despre mine -->
-    <section id="despre" class="container">
-      <h2 class="section-title">Despre mine</h2>
-      <div class="grid">
-        <article class="card span-6">
-          <h3>Cine sunt</h3>
-          <p>Sunt un tânăr developer pasionat de backend. Învăț temeinic conceptele de bază și aplic <em>best practices</em>: validare input, tratamentul excepțiilor, testare, structuri clare ale proiectului.</p>
-          <div class="sep"></div>
-          <p class="muted">Obiectiv: să contribui la un produs real, să code-review cu echipa și să cresc pe stack-ul Java.</p>
-        </article>
-        <article class="card span-6">
-          <h3>Stack & abilități</h3>
-          <p>
-            <span class="tag">Java</span>
-            <span class="tag">OOP</span>
-            <span class="tag">Collections</span>
-            <span class="tag">Exceptions</span>
-            <span class="tag">Maven</span>
-            <span class="tag">Git/GitHub</span>
-            <span class="tag">SQL / MySQL</span>
-            <span class="tag">Spring Boot (în curs)</span>
-            <span class="tag">Docker (în curs)</span>
-          </p>
-          <div class="sep"></div>
-          <p class="muted">Soft skills: comunicare clară, disciplină, atenție la detalii, învățare continuă.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Proiecte -->
-    <section id="proiecte" class="container projects">
-      <h2 class="section-title">Proiecte</h2>
-      <div class="grid">
-        <!-- Proiect 1 -->
-        <article class="card span-6">
-          <div class="thumb" aria-hidden="true"></div>
-          <h3>Tasky — Manager de task-uri (CLI)</h3>
-          <p>Aplicație Java pentru gestionarea task-urilor în linie de comandă: adăugare, listare, căutare, validare input, salvare locală.</p>
-          <p class="muted">Tehnologii: Java, OOP, Collections, Exceptions, Git</p>
-          <div class="actions">
-            <a class="btn" href="https://github.com/YOUR_GITHUB/tasky" target="_blank" rel="noopener">Cod sursă</a>
-            <a class="btn" href="#" aria-disabled="true">Demo</a>
-          </div>
-        </article>
-        <!-- Proiect 2 -->
-        <article class="card span-6">
-          <div class="thumb" aria-hidden="true"></div>
-          <h3>Contact CLI — Manager de contacte</h3>
-          <p>CRUD pentru contacte în CLI, cu validare e-mail, căutare, sortare, tratarea erorilor și structură pe servicii.</p>
-          <p class="muted">Tehnologii: Java, OOP, Exceptions, Regex, Maven</p>
-          <div class="actions">
-            <a class="btn" href="https://github.com/YOUR_GITHUB/contact-cli" target="_blank" rel="noopener">Cod sursă</a>
-            <a class="btn" href="#" aria-disabled="true">Demo</a>
-          </div>
-        </article>
-        <!-- Proiect 3 (ex Spring) -->
-        <article class="card span-6">
-          <div class="thumb" aria-hidden="true"></div>
-          <h3>Book Manager API — Spring Boot + MySQL</h3>
-          <p>API REST simplu pentru gestionarea unei biblioteci de cărți. Include endpoints CRUD, validare, strat de servicii și persistare în MySQL.</p>
-          <p class="muted">Tehnologii: Spring Boot, Spring Web, JPA, MySQL, Docker (compose)</p>
-          <div class="actions">
-            <a class="btn" href="https://github.com/YOUR_GITHUB/book-manager" target="_blank" rel="noopener">Cod sursă</a>
-            <a class="btn" href="#" aria-disabled="true">Swagger</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Certificări -->
-    <section id="certificari" class="container">
-      <h2 class="section-title">Certificări & Recunoașteri</h2>
-      <div class="grid">
-        <article class="card span-4">
-          <h3>Certificat Java</h3>
-          <p class="muted">[Nume curs / instituție] — [Anul]</p>
-          <div class="actions">
-            <a class="btn" href="/docs/certificat-java.pdf" target="_blank" rel="noopener">Vezi certificatul</a>
-          </div>
-        </article>
-        <article class="card span-4">
-          <h3>Diplomă / Curs</h3>
-          <p class="muted">[Nume curs relevant] — [Anul]</p>
-          <div class="actions">
-            <a class="btn" href="#">Detalii</a>
-          </div>
-        </article>
-        <article class="card span-4">
-          <h3>Realizări</h3>
-          <p class="muted">Participare hackathon, contribuții open-source, etc.</p>
-          <div class="actions">
-            <a class="btn" href="#">Vezi</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="container">
-      <h2 class="section-title">Contact</h2>
-      <div class="row">
-        <div class="col card">
-          <h3>Hai să vorbim</h3>
-          <p>Îmi poți scrie pe email sau pe rețelele de mai jos. Răspund rapid și direct.</p>
-          <p class="muted">Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-          <div class="actions">
-            <a class="btn" href="mailto:youremail@example.com">Trimite email</a>
-            <a class="btn" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <span class="badge">Java Developer • Spring Boot • React</span>
+          <h1 class="title">Salut! Sunt <span style="background: linear-gradient(135deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Ion Gondrea</span>.</h1>
+          <p class="subtitle">Masterand pasionat de <strong>Java, Spring Boot, React</strong> și arhitecturi moderne. Îmi place să construiesc aplicații clare, testabile și bine documentate. Mai jos găsești proiectele mele și reușitele de care sunt mândru.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#proiecte">Vezi proiectele</a>
+            <a class="btn" href="https://github.com/IonGondrea" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="mailto:ion.gondrea@example.com">Contactează-mă</a>
           </div>
         </div>
+        <div class="card">
+          <img class="pfp" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Poză profil (înlocuiește)" />
+        </div>
       </div>
+    </section>
+
+    <!-- DESPRE -->
+    <section id="despre">
+      <h2>Despre mine</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <p>Sunt student masterand la UAB, cu focus pe baze de date și programare avansată. Am experiență cu <strong>Spring Boot</strong>, <strong>REST APIs</strong>, <strong>JPA/Hibernate</strong>, <strong>React</strong>, <strong>Docker</strong> și bune practici de testare.
+          Îmi place să documentez corect serviciile (OpenAPI/Swagger) și să mențin un stil de cod curat.</p>
+          <div class="kpis">
+            <span class="kpi">3+ proiecte full‑stack</span>
+            <span class="kpi">2 ani experiență practică</span>
+            <span class="kpi">Hackathoane & certificări</span>
+          </div>
+        </div>
+        <div class="card">
+          <ul>
+            <li><strong>Tehnologii:</strong> Java, Spring Boot, JPA, REST, JWT, Docker, React/TS, PostgreSQL/MySQL</li>
+            <li><strong>Interese:</strong> arhitecturi modulare, documentare tehnică, DevOps light (CI/CD)</li>
+            <li><strong>Actualmente:</strong> construiesc proiectul <em>Tasky</em> și rafinez portofoliul</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROIECTE -->
+    <section id="proiecte">
+      <h2>Proiecte</h2>
+      <div class="grid grid-3">
+        <!-- Project card 1 -->
+        <article class="card project">
+          <img class="thumb" src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop" alt="Tasky app preview" />
+          <div>
+            <h3>Tasky — Task Manager</h3>
+            <p>Aplicație full‑stack pentru managementul taskurilor: Spring Boot (API REST), React (UI), Docker Compose, Swagger.</p>
+            <div class="tags">
+              <span class="tag">Spring Boot</span>
+              <span class="tag">React</span>
+              <span class="tag">Docker</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="https://github.com/IonGondrea/Tasky" target="_blank" rel="noreferrer">Cod sursă</a>
+            <a class="btn" href="#" aria-disabled="true" onclick="alert('Adaugă link spre demo când îl publici.'); return false;">Demo</a>
+          </div>
+        </article>
+        <!-- Project card 2 -->
+        <article class="card project">
+          <img class="thumb" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="API docs" />
+          <div>
+            <h3>API Catalog</h3>
+            <p>Micro‑serviciu cu documentație OpenAPI/Swagger, JWT auth și testare automatizată pentru endpointuri critice.</p>
+            <div class="tags">
+              <span class="tag">OpenAPI</span>
+              <span class="tag">JWT</span>
+              <span class="tag">JUnit</span>
+            </div>
+          </div>
+          <div>
+            <a class="btn" href="#">Repo</a>
+          </div>
+        </article>
+        <!-- Project card 3 -->
+        <article class="card project">
+          <img class="thumb" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Dashboard" />
+          <div>
+            <h3>Dev Dashboard</h3>
+            <p>Dashboard personal pentru monitorizarea issue‑urilor și a commiturilor, integrat cu GitHub REST API.</p>
+            <div class="tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">GitHub API</span>
+              <span class="tag">CI/CD</span>
+            </div>
+          </div>
+          <div>
+            <a class="btn" href="#">Repo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="reu">
+      <h2>Reușite</h2>
+      <div class="card timeline">
+        <div class="t-item">
+          <strong>2025</strong> — Finalist hackathon universitar & contribuții open‑source la proiecte educaționale.
+        </div>
+        <div class="t-item">
+          <strong>2024</strong> — Certificări: Java Foundations, Spring & REST API Design.
+        </div>
+        <div class="t-item">
+          <strong>2023</strong> — Practică: dezvoltare și documentare API într‑un proiect intern.
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="galerie">
+      <h2>Galerie</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=800&auto=format&fit=crop" alt="Certificat" />
+        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop" alt="Proiect" />
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="Workshop" />
+        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=800&auto=format&fit=crop" alt="Team" />
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop" alt="UI" />
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Coding" />
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <form onsubmit="return submitForm(event)">
+        <div class="grid grid-2">
+          <div>
+            <label for="nume">Nume</label>
+            <input id="nume" name="nume" placeholder="Numele tău" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="adresa@exemplu.com" required>
+          </div>
+        </div>
+        <div>
+          <label for="mesaj">Mesaj</label>
+          <textarea id="mesaj" name="mesaj" rows="5" placeholder="Salut, Ion! Aș vrea să discutăm despre…" required></textarea>
+        </div>
+        <div>
+          <button class="btn" type="submit">Trimite</button>
+        </div>
+      </form>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <div>© <span id="year"></span> Gondrea Eugen. Toate drepturile rezervate.</div>
-      <div class="links">
-        <a href="#despre">Despre</a>
-        <a href="#proiecte">Proiecte</a>
-        <a href="#certificari">Certificări</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
+    <div class="container">© <span id="year"></span> Ion Gondrea · <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/IonGondrea" target="_blank" rel="noreferrer">GitHub</a></div>
   </footer>
 
   <script>
-    // anul curent în footer
     document.getElementById('year').textContent = new Date().getFullYear();
+    function submitForm(e){
+      e.preventDefault();
+      const params = new URLSearchParams({
+        subject: 'Contact portofoliu',
+        body: `Nume: ${document.getElementById('nume').value}\nEmail: ${document.getElementById('email').value}\n\n${document.getElementById('mesaj').value}`
+      });
+      window.location.href = `mailto:ion.gondrea@example.com?${params.toString()}`;
+      return false;
+    }
   </script>
 </body>
 </html>
