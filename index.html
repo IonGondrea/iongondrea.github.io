@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gondrea Eugen — Portofoliu</title>
+  <meta name="description" content="Portofoliul lui Gondrea Eugen: proiecte Java, certificări, contact și linkuri către GitHub & LinkedIn." />
+  <meta name="author" content="Gondrea Eugen" />
+  <meta property="og:title" content="Gondrea Eugen — Portofoliu" />
+  <meta property="og:description" content="Proiecte Java, certificări, contact și linkuri către GitHub & LinkedIn." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-image.jpg" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="/assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0c10;          /* dark */
+      --panel: #11131a;
+      --card: #151826;
+      --text: #e6e6e6;
+      --muted: #b7b7c2;
+      --brand: #6aa9ff;      /* primary */
+      --brand-2:#7df0c4;     /* accent */
+      --ring: rgba(122,169,255,.35);
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f6f7fb;
+        --panel: #ffffff;
+        --card: #ffffff;
+        --text: #0d0d0f;
+        --muted: #515768;
+        --brand: #2e6cff;
+        --brand-2:#06b6d4;
+        --ring: rgba(46,108,255,.22);
+        --shadow: 0 10px 25px rgba(15,23,42,.09);
+      }
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(122,169,255,.18), transparent 60%),
+                  radial-gradient(1000px 500px at -10% 10%, rgba(125,240,196,.12), transparent 40%),
+                  var(--bg);
+      color: var(--text);
+    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    /* Header */
+    header { position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(180%) blur(10px);
+      background: color-mix(in lch, var(--bg) 75%, transparent); border-bottom: 1px solid color-mix(in lch, var(--text) 10%, transparent);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .3px; }
+    .brand .logo { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: var(--shadow); }
+    nav a { color: var(--text); text-decoration: none; margin-left: 18px; font-weight: 500; opacity: .9; }
+    nav a:hover { opacity: 1; }
+    /* Hero */
+    .hero { padding: 72px 0 32px; text-align: left; }
+    .kicker { display: inline-flex; gap: 8px; align-items: center; padding: 6px 10px; border: 1px solid color-mix(in lch, var(--text) 15%, transparent); border-radius: 999px; font-size: 12px; opacity: .85; }
+    .kicker .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--brand); box-shadow: 0 0 0 4px var(--ring); }
+    h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; margin: 18px 0 14px; letter-spacing: -.3px; }
+    .lead { font-size: clamp(16px, 2.2vw, 18px); color: var(--muted); max-width: 780px; }
+    .cta { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 12px; border: 1px solid color-mix(in lch, var(--text) 15%, transparent); background: linear-gradient(180deg, color-mix(in lch, var(--panel) 70%, transparent), color-mix(in lch, var(--panel) 92%, transparent)); color: var(--text); text-decoration: none; font-weight: 600; box-shadow: var(--shadow); }
+    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); border: none; color: #0b0c10; }
+    .btn:hover { transform: translateY(-1px); }
+    /* Sections */
+    section { padding: 48px 0; }
+    .section-title { font-size: 22px; margin-bottom: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card { grid-column: span 12; border: 1px solid color-mix(in lch, var(--text) 12%, transparent); background: linear-gradient(180deg, color-mix(in lch, var(--card) 85%, transparent), color-mix(in lch, var(--card) 98%, transparent)); border-radius: 16px; padding: 18px; box-shadow: var(--shadow); }
+    @media (min-width: 720px){ .card.span-6 { grid-column: span 6; } .card.span-4{ grid-column: span 4; } }
+    .muted { color: var(--muted); font-size: 14px; }
+    .tag { display: inline-block; padding: 4px 10px; border-radius: 999px; background: color-mix(in lch, var(--brand) 15%, transparent); color: color-mix(in lch, var(--brand) 85%, white); font-size: 12px; margin-right: 6px; }
+    .card h3 { margin: 6px 0 8px; font-size: 18px; }
+    .card p { margin: 0 0 8px; color: var(--muted); }
+    .card .actions { display:flex; gap: 10px; margin-top: 10px; }
+    .projects .thumb { width: 100%; aspect-ratio: 16/9; border-radius: 12px; background: linear-gradient(135deg, color-mix(in lch, var(--brand) 25%, transparent), color-mix(in lch, var(--brand-2) 25%, transparent)); opacity:.9; }
+    /* Footer */
+    footer { padding: 36px 0 56px; color: var(--muted); text-align: center; }
+    .links { display:flex; gap: 14px; justify-content:center; margin-top: 10px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    /* Utilities */
+    .row { display:flex; gap:18px; flex-wrap: wrap; }
+    .col { flex:1 1 240px; }
+    .nowrap { white-space: nowrap; }
+    .sep { height:1px; background: color-mix(in lch, var(--text) 12%, transparent); margin: 8px 0 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><div class="logo" aria-hidden="true"></div> <span>Gondrea Eugen</span></div>
+      <nav aria-label="Meniu principal">
+        <a href="#despre">Despre</a>
+        <a href="#proiecte">Proiecte</a>
+        <a href="#certificari">Certificări</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container">
+      <span class="kicker"><span class="dot"></span> Junior Java Developer</span>
+      <h1>Bună, sunt <span class="nowrap">Gondrea Eugen</span> — construiesc aplicații Java clare, testabile și utile.</h1>
+      <p class="lead">Îmi place să transform ideile în proiecte reale. Lucrez cu Java, OOP, colecții, excepții, SQL, Git/GitHub și experimentez cu Spring Boot, Docker și puțin frontend. Caut o oportunitate <strong>Junior</strong> unde să cresc prin practică.</p>
+      <div class="cta">
+        <a class="btn primary" href="#proiecte">Vezi proiectele</a>
+        <a class="btn" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="/cv/Gondrea_Eugen_CV.pdf" download>Descarcă CV</a>
+      </div>
+    </section>
+
+    <!-- Despre mine -->
+    <section id="despre" class="container">
+      <h2 class="section-title">Despre mine</h2>
+      <div class="grid">
+        <article class="card span-6">
+          <h3>Cine sunt</h3>
+          <p>Sunt un tânăr developer pasionat de backend. Învăț temeinic conceptele de bază și aplic <em>best practices</em>: validare input, tratamentul excepțiilor, testare, structuri clare ale proiectului.</p>
+          <div class="sep"></div>
+          <p class="muted">Obiectiv: să contribui la un produs real, să code-review cu echipa și să cresc pe stack-ul Java.</p>
+        </article>
+        <article class="card span-6">
+          <h3>Stack & abilități</h3>
+          <p>
+            <span class="tag">Java</span>
+            <span class="tag">OOP</span>
+            <span class="tag">Collections</span>
+            <span class="tag">Exceptions</span>
+            <span class="tag">Maven</span>
+            <span class="tag">Git/GitHub</span>
+            <span class="tag">SQL / MySQL</span>
+            <span class="tag">Spring Boot (în curs)</span>
+            <span class="tag">Docker (în curs)</span>
+          </p>
+          <div class="sep"></div>
+          <p class="muted">Soft skills: comunicare clară, disciplină, atenție la detalii, învățare continuă.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Proiecte -->
+    <section id="proiecte" class="container projects">
+      <h2 class="section-title">Proiecte</h2>
+      <div class="grid">
+        <!-- Proiect 1 -->
+        <article class="card span-6">
+          <div class="thumb" aria-hidden="true"></div>
+          <h3>Tasky — Manager de task-uri (CLI)</h3>
+          <p>Aplicație Java pentru gestionarea task-urilor în linie de comandă: adăugare, listare, căutare, validare input, salvare locală.</p>
+          <p class="muted">Tehnologii: Java, OOP, Collections, Exceptions, Git</p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/YOUR_GITHUB/tasky" target="_blank" rel="noopener">Cod sursă</a>
+            <a class="btn" href="#" aria-disabled="true">Demo</a>
+          </div>
+        </article>
+        <!-- Proiect 2 -->
+        <article class="card span-6">
+          <div class="thumb" aria-hidden="true"></div>
+          <h3>Contact CLI — Manager de contacte</h3>
+          <p>CRUD pentru contacte în CLI, cu validare e-mail, căutare, sortare, tratarea erorilor și structură pe servicii.</p>
+          <p class="muted">Tehnologii: Java, OOP, Exceptions, Regex, Maven</p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/YOUR_GITHUB/contact-cli" target="_blank" rel="noopener">Cod sursă</a>
+            <a class="btn" href="#" aria-disabled="true">Demo</a>
+          </div>
+        </article>
+        <!-- Proiect 3 (ex Spring) -->
+        <article class="card span-6">
+          <div class="thumb" aria-hidden="true"></div>
+          <h3>Book Manager API — Spring Boot + MySQL</h3>
+          <p>API REST simplu pentru gestionarea unei biblioteci de cărți. Include endpoints CRUD, validare, strat de servicii și persistare în MySQL.</p>
+          <p class="muted">Tehnologii: Spring Boot, Spring Web, JPA, MySQL, Docker (compose)</p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/YOUR_GITHUB/book-manager" target="_blank" rel="noopener">Cod sursă</a>
+            <a class="btn" href="#" aria-disabled="true">Swagger</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Certificări -->
+    <section id="certificari" class="container">
+      <h2 class="section-title">Certificări & Recunoașteri</h2>
+      <div class="grid">
+        <article class="card span-4">
+          <h3>Certificat Java</h3>
+          <p class="muted">[Nume curs / instituție] — [Anul]</p>
+          <div class="actions">
+            <a class="btn" href="/docs/certificat-java.pdf" target="_blank" rel="noopener">Vezi certificatul</a>
+          </div>
+        </article>
+        <article class="card span-4">
+          <h3>Diplomă / Curs</h3>
+          <p class="muted">[Nume curs relevant] — [Anul]</p>
+          <div class="actions">
+            <a class="btn" href="#">Detalii</a>
+          </div>
+        </article>
+        <article class="card span-4">
+          <h3>Realizări</h3>
+          <p class="muted">Participare hackathon, contribuții open-source, etc.</p>
+          <div class="actions">
+            <a class="btn" href="#">Vezi</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="row">
+        <div class="col card">
+          <h3>Hai să vorbim</h3>
+          <p>Îmi poți scrie pe email sau pe rețelele de mai jos. Răspund rapid și direct.</p>
+          <p class="muted">Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+          <div class="actions">
+            <a class="btn" href="mailto:youremail@example.com">Trimite email</a>
+            <a class="btn" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="year"></span> Gondrea Eugen. Toate drepturile rezervate.</div>
+      <div class="links">
+        <a href="#despre">Despre</a>
+        <a href="#proiecte">Proiecte</a>
+        <a href="#certificari">Certificări</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // anul curent în footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
