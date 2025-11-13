@@ -1,2 +1,2 @@
 # iongondrea.github.io
-Portofoliu personal — Gondrea Ion
+HTML/CSS - PROJECT
