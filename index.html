@@ -9,12 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #0b0f14;        /* very dark blue/gray */
-      --panel: #121821;     /* card background */
-      --muted: #9fb0c0;     /* secondary text */
-      --text: #e6edf3;      /* primary text */
-      --brand: #4aa3ff;     /* accent */
-      --brand-2:#8b5cf6;    /* secondary accent */
+      --bg: #0b0f14;
+      --panel: #121821;
+      --muted: #9fb0c0;
+      --text: #e6edf3;
+      --brand: #4aa3ff;
+      --brand-2:#8b5cf6;
       --ring: rgba(74,163,255,.45);
       --radius: 16px;
       --shadow: 0 8px 30px rgba(0,0,0,.35);
@@ -33,7 +33,7 @@
     a:hover{ text-decoration: underline; }
     .container{ width: min(1100px, 92vw); margin: 0 auto; }
 
-    /* Header */
+
     header{
       position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px);
       background: rgba(11,15,20,.6); border-bottom: 1px solid rgba(255,255,255,.06);
@@ -46,7 +46,7 @@
     .btn{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border-radius: 999px; background: linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; font-weight:700; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.08); }
     .btn:hover{ filter: brightness(1.05); text-decoration:none; }
 
-    /* Hero */
+
     .hero{ padding: 80px 0 40px; }
     .hero-inner{ display:grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: center; }
     .badge{ display:inline-block; padding:6px 10px; border-radius: 999px; font-size:.85rem; color:#cfe3ff; background: rgba(74,163,255,.16); border:1px solid rgba(74,163,255,.25); }
@@ -57,40 +57,40 @@
            padding: 18px; }
     .pfp{ aspect-ratio: 1/1; width: 100%; border-radius: var(--radius); object-fit: cover; border:1px solid rgba(255,255,255,.08); }
 
-    /* Sections */
+
     section{ padding: 56px 0; }
     h2{ font-size: clamp(26px, 2.6vw, 34px); margin: 0 0 18px; }
     .grid{ display:grid; gap: 16px; }
     .grid-3{ grid-template-columns: repeat(3, 1fr); }
     .grid-2{ grid-template-columns: repeat(2, 1fr); }
 
-    /* About */
+
     .kpis{ display:flex; gap:14px; flex-wrap: wrap; margin-top: 12px; }
     .kpi{ padding:10px 12px; background: #0e141c; border:1px solid rgba(255,255,255,.06); border-radius: 10px; color:#c8d6e5; }
 
-    /* Projects */
+
     .project{ display:flex; flex-direction: column; gap: 10px; }
     .project .thumb{ width:100%; aspect-ratio: 16/9; border-radius: 12px; object-fit: cover; border:1px solid rgba(255,255,255,.08); }
     .tags{ display:flex; gap:8px; flex-wrap: wrap; }
     .tag{ font-size:.85rem; padding:6px 10px; border-radius: 999px; background:#0f1620; border:1px solid rgba(255,255,255,.08); color:#cfe3ff; }
 
-    /* Achievements */
+
     .timeline{ border-left: 2px solid rgba(255,255,255,.12); padding-left:14px; margin-left:6px; }
     .t-item{ position:relative; margin: 16px 0; }
     .t-item::before{ content:""; position:absolute; left:-22px; top:8px; width:12px; height:12px; border-radius:50%; background: linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow: 0 0 0 5px rgba(74,163,255,.12); }
 
-    /* Gallery */
+
     .gallery{ display:grid; grid-template-columns: repeat(6, 1fr); gap:10px; }
     .gallery img{ width:100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; border:1px solid rgba(255,255,255,.08); }
 
-    /* Contact */
+
     form{ display:grid; gap:12px; background: #0e141c; border:1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 16px; }
     input, textarea{ width:100%; padding:12px 14px; border-radius: 10px; border:1px solid rgba(255,255,255,.1); background:#0b1118; color:var(--text); outline: none; }
     input:focus, textarea:focus{ border-color: var(--brand); box-shadow: 0 0 0 4px var(--ring); }
 
     footer{ padding: 40px 0 60px; color: var(--muted); text-align:center; }
 
-    /* Responsive */
+
     @media (max-width: 900px){
       .hero-inner{ grid-template-columns: 1fr; }
       .grid-3{ grid-template-columns: 1fr; }
@@ -113,7 +113,7 @@
   </header>
 
   <main class="container">
-    <!-- HERO -->
+
     <section class="hero">
       <div class="hero-inner">
         <div>
@@ -132,7 +132,6 @@
       </div>
     </section>
 
-    <!-- DESPRE -->
     <section id="despre">
       <h2>Despre mine</h2>
       <div class="grid grid-2">
@@ -180,11 +179,10 @@
       </div>
     </section>
 
-      <!-- PROIECTE -->
       <section id="proiecte">
           <h2>Proiecte</h2>
           <div class="grid grid-3">
-              <!-- Project card 1 -->
+
               <article class="card project">
                   <img class="thumb" src="./assets/task.png" alt="Tasky app preview" />
                   <div>
@@ -201,7 +199,6 @@
                   </div>
               </article>
 
-              <!-- Placeholder proiect 2 -->
               <article class="card project" style="text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:260px; position:relative;">
                   <img class="thumb" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Coming soon" style="opacity:0.25; filter:blur(2px);">
                   <div style="position:absolute; text-align:center;">
@@ -210,7 +207,7 @@
                   </div>
               </article>
 
-              <!-- Placeholder proiect 3 -->
+
               <article class="card project" style="text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:260px; position:relative;">
                   <img class="thumb" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Coming soon" style="opacity:0.25; filter:blur(2px);">
                   <div style="position:absolute; text-align:center;">
@@ -220,42 +217,6 @@
               </article>
           </div>
       </section>
-
-      <!-- REUȘITE — pe rând separat (full-width) -->
-      <section id="reu" class="section-wide">
-          <h2>Reușite</h2>
-          <div class="grid achievements-grid">
-              <!-- Curs Java -->
-              <article class="card project">
-                  <img class="thumb" src="./assets/diploma.png" alt="Certificat Java Wantsome"  height="1000" />
-                  <div>
-                      <h3>Certificare Java Full-Stack Developer</h3>
-                      <p>Am finalizat cursul <strong>Java Full-Stack Developer</strong> la Wantsome IT Learning Center (2025) și am obținut certificarea <strong>„Programator Ajutor” – ANC</strong>
-                  </div>
-              </article>
-
-              <!-- Business Administration -->
-              <article class="card project">
-                  <img class="thumb" src="./assets/univer.png" height="1300" alt="Licență Business Administration" />
-                  <div>
-                      <h3>Licențiat în Business Administration</h3>
-                      <p>Am absolvit programul de <strong>Business Administration</strong> la Universitatea „1 Decembrie 1918” din Alba Iulia (2024), cu o <strong>lucrare de licență pe tema „Provocările administrării unei afaceri din industria IT într-o economie globalizată" , „Studiu de caz: UiPath”</strong>,o companie globală de software care dezvoltă o platformă pentru automatizarea proceselor robotizate </p>
-                  </div>
-              </article>
-
-              <!-- Hackathon -->
-              <article class="card project">
-                  <img class="thumb" src="./assets/revo.png" width="960" height="960" alt="Techsylvania Hackathon" />
-                  <div>
-                      <h3>Hackathon — Techsylvania 2025</h3>
-                      <p>Am participat la <strong>Techsylvania Hackathon (Cluj-Napoca, 2025).</strong>Evenimentul mi-a oferit ocazia să învăț despre importanța comunicării, a organizării și a gândirii logice în realizarea unui produs tehnologic într-un timp limitat.
-                          În același timp, am descoperit numeroase concepte moderne legate de inteligența artificială, precum utilizarea modelelor de învățare automată, integrarea API-urilor bazate pe AI și impactul acestor tehnologii asupra procesului de dezvoltare software.
-                          Participarea la hackathon a reprezentat o experiență valoroasă care mi-a consolidat interesul pentru inovație, colaborare și aplicarea practică a cunoștințelor teoretice în domeniul IT.</p>
-                  </div>
-              </article>
-          </div>
-      </section>
-
 
       <div class="grid grid-2 sections-duo">
               <section id="galerie">
